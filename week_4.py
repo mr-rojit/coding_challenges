@@ -29,7 +29,23 @@ Output : 4
 Note : The returned value will be an 'integer', do not use square root functions from python.
 """
 
+def find_square_root(n) -> int:
+    """
+    function will accept a number assuming it is a perfect square (since it is returning a integer)
+    returns None if not a perfect square
+    return n**0.5
+    """
+    if n <= 0:
+        raise Exception('Please provide number greater than 0')
 
+    if n == 1:
+        return 1
+
+    for i in range(n):
+        if i*i == n:
+            return i
+
+# print(find_square_root(15))
 
 
  
@@ -49,4 +65,4 @@ def check_geometric_progression(lst):
                 return False
     return True
 
-print(check_geometric_progression([2, 6, 18, 54]))
+# print(check_geometric_progression([2, 6, 18, 54]))

@@ -21,7 +21,7 @@ def check_palindrome_number(num):
     else:
         print('It is not a palindrome')
 
-# check_palindrome_number(121)
+check_palindrome_number(121)
 
 
 """
@@ -83,5 +83,5 @@ def roman_to_int(s):
 
     return ans + roman[s[-1]]
 
-print(roman_to_int('MMMDCX'))
+# print(roman_to_int('MMMDCX'))
 

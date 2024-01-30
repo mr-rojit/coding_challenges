@@ -65,4 +65,4 @@ def check_geometric_progression(lst):
                 return False
     return True
 
-# print(check_geometric_progression([2, 6, 18, 54]))
+print(check_geometric_progression([2, 6, 18, 54]))

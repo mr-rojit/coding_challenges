@@ -68,6 +68,8 @@ def find_numbers_from_str(s):
 
 # print(find_numbers_from_str('89ADFRE41'))
 
+#Alternative way
+
 import re
 input='89ADFRE41'
 arr=re.findall(r'[0-9]+',input)

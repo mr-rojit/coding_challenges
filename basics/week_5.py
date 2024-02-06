@@ -38,15 +38,11 @@ def make_beautiful(s,output):
     
 
         
-if not check_beautiful(s):
-    print(f'Output: {make_beautiful(s,output)}')
-else:
-    print(f'Output: {output}')
+# if not check_beautiful(s):
+#     print(f'Output: {make_beautiful(s,output)}')
+# else:
+#     print(f'Output: {output}')
     
-        
-
-
-        
     
 """
 Write a Python program to find all the numbers from 0-9 from a string:
@@ -76,6 +72,23 @@ Input : [1, 2, 1, 3, 2, 5], 2    (n=2)
 Output :[5, 3]
 """
 
+def find_given_count(lst, n):
+    nums_dict = dict()
+    for i in lst:
+        if i in nums_dict:
+            nums_dict[i] +=1
+        else:
+            nums_dict[i] = 1
+    output = []
+    for k,v in nums_dict.items():
+        if v == n:
+            output.append(k)
+    return output
+
+# print(find_given_count([1, 2, 3, 2, 5, 5], 2))
+
+
+
 
 """
  Write a Python program to reverse the digits of an integer. 
@@ -100,3 +113,33 @@ def reverse_digit(num):
     return rev
 
 # print(reverse_digit(-234))
+
+
+"""
+You are given three integers start, finish, and limit. You are also given a 0-indexed string s representing a positive integer.
+
+A positive integer x is called powerful if it ends with s (in other words, s is a suffix of x) and each digit in x is at most limit.
+
+Return the total number of powerful integers in the range [start..finish].
+
+A string x is a suffix of a string y if and only if x is a substring of y that starts from some index (including 0)
+in y and extends to the index y.length - 1.
+For example, 25 is a suffix of 5125 whereas 512 is not.
+
+"""
+
+
+def find_powerful(start, finish, limit, s):
+    int_s = int(s)
+    s_len = len(s)
+    mod_num = int("1"+("0"*s_len))
+    lim = int(str(limit)+s)
+    count = 0
+    for i in range(start, finish):
+        if i > lim:
+            break
+        if i%mod_num == int_s:
+            count +=1
+    return count
+
+# print(find_powerful(15, 215, 6, "10"))

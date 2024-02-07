@@ -32,7 +32,7 @@ def check_palindrome(s):
     else:
         print('It is not a palindrome')
 
-check_palindrome('race a car')
+# check_palindrome('race a car')
 
  
 """
@@ -52,6 +52,29 @@ Input: nums = [2,2,1,1,1,2,2]
 
 Output: 2
 """
+
+def find_majority(lst):
+    i, votes = 0, 0
+    candidate = -1
+    for item in lst:
+        if votes == 0:
+            candidate = item
+            votes += 1
+        else:
+            if item == candidate:
+                votes +=1
+            else:
+                votes -=1
+    
+    if lst.count(candidate) > len(lst) // 2:
+        return candidate
+    else:
+        return None
+
+
+# print(find_majority([2,2,1,1,1,2,2]))
+
+
 
 
 """

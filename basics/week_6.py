@@ -13,7 +13,7 @@ def check_arethmetic_progression(lst):
             return False
     return True
 
-print(check_arethmetic_progression([5, 7, 9, 11, 14]))
+# print(check_arethmetic_progression([5, 7, 9, 11, 14]))
 
  
 """
@@ -25,15 +25,30 @@ shows the first 10 ugly numbers.
 Note: 1 is typically treated as an ugly number
 """
 
+
 def find_prime_factors(n):
-    pass
+    div = 2
+    prime_factors = []
+    while div <= n:
+        if n % div == 0:
+            n = n // div
+            prime_factors.append(div)
+        else:
+            div +=1
+    return prime_factors
 
 def find_ugly_number(n):
-    print()
+    if n == 1:
+        return True
+    prime_factors = find_prime_factors(n)
+    if max(prime_factors) > 5:
+        return False
+    return True
 
-find_ugly_number(12)
+print(find_ugly_number(12))
 
- 
+
+
 """
 3-Write a Python Function to find the single number in a list that doesn't occur n times.
 Input : [5, 3,3,4, 4, 3, 4], N=3

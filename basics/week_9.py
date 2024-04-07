@@ -108,3 +108,20 @@ Input: n = 2
 
 Output: false
 """
+
+def find_happy_number(n):
+    sq = 0
+    while sq != 1:
+        while n > 0:
+            last = n % 10
+            n = n // 10
+            print(last)
+            sq += last**2
+        n = sq
+        if sq != 1:
+            sq = 0
+    return True
+
+
+
+print(find_happy_number(19))

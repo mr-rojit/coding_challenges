@@ -64,13 +64,35 @@ def find_numbers_from_str(s):
 
 # print(find_numbers_from_str('89ADFRE41'))
 
+#Alternative way
 
+import re
+input='89ADFRE41'
+arr=re.findall(r'[0-9]+',input)
+print([int(''.join(arr))])
 
 """
 Write a Python program to find two elements once in a list where every element appears exactly n times in the list. 
 Input : [1, 2, 1, 3, 2, 5], 2    (n=2)
 Output :[5, 3]
 """
+
+def find_n(lst, n):
+    counter={}
+    output=[]
+    for i in lst:
+        if i in counter:
+            counter[i]+=1
+        else:
+            counter[i]=1
+    
+    for k,v in counter.items():
+        if(v!=n):
+            output.append(k)
+    return(output)
+    
+#print(find_n([1, 2, 1, 3, 2, 5],2))
+=======
 
 def find_given_count(lst, n):
     nums_dict = dict()
@@ -86,6 +108,7 @@ def find_given_count(lst, n):
     return output
 
 # print(find_given_count([1, 2, 3, 2, 5, 5], 2))
+
 
 
 

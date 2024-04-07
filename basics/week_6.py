@@ -49,6 +49,31 @@ print(find_ugly_number(12))
 
 
 
+
+
+## Alternate method
+
+def isUgly(self,n):
+    prime_factors=[]
+    div=2
+
+    if(n<=0):
+        return False
+    while(n>1):
+        if(n%2==0):
+            n=n/2
+        elif (n%3==0):
+            n=n/3
+        elif (n%5==0):
+            n=n/5
+        else:
+            return False
+    return True
+
+isUgly(6)
+
+ 
+
 """
 3-Write a Python Function to find the single number in a list that doesn't occur n times.
 Input : [5, 3,3,4, 4, 3, 4], N=3
